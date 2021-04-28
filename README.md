@@ -13,9 +13,12 @@
     - [CircleCI Web setup](#circleci-web-setup)
     - [Dev branch](#dev-branch)
     - [Github pull request](#github-pull-request)
+    - [Extraz](#extraz)
+        - [Make a Calculator API with Flask](#make-a-calculator-api-with-flask)
+        - [](#)
+        - [](#)
+        - [](#)
     - [Report requirements](#report-requirements)
-    - [](#)
-    - [](#)
     - [](#)
 - [](#)
 
@@ -259,6 +262,27 @@ Merge pull request:
 Successful merge:
 
 ![](img/10.png)
+
+## Extraz
+
+### Make a Calculator API with Flask
+
+#### Requirements
+
+**Functions (basic)**
+
+- [ ] Addition
+- [ ] Subtractions
+- [ ] Multiplikation
+- [ ] Division
+- [ ] With tests
+
+**Flask (advanced)**
+
+- [ ] Template for `index.html`
+- [ ] 
+- [ ] 
+- [ ] 
 
 ## Report requirements:
 
