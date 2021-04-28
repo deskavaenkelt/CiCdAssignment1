@@ -1,12 +1,18 @@
 # CI/CD Assignment 1
 
-## Table of Content
+# Table of Content
 
-- [What to evaluate](#what-to-evaluate)
-- [Introduction](#introduction)
+- [Assignment 1](#assignment-1)
+    - [What to evaluate](#what-to-evaluate)
+    - [Introduction](#introduction)
 - [Report](#report)
+- [Installation requirements](#installation-requirements)
 - [](#)
 - [](#)
+- [](#)
+- [](#)
+
+# Assignment 1
 
 ## What to evaluate
 
@@ -64,6 +70,9 @@ pip install flake8
 pip install pytest
 ```
 
+[Change default test runner in PyCharm to pytest](https://www.jetbrains.com/help/pycharm/pytest.html#enable-pytest)
 
+**flake8 settings in PyCharm**
 
+![](img/1.png)
 
