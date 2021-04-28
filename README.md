@@ -244,7 +244,7 @@ Commit and push:
 
 ## Github pull request
 
-Now we will merge `dev` into `main` if the tests are `OK`: 
+Now we will merge `dev` into `main` if the tests are `OK`:
 
 ![](img/7.png)
 
@@ -259,8 +259,6 @@ Merge pull request:
 Successful merge:
 
 ![](img/10.png)
-
-
 
 ## Report requirements:
 
