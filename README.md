@@ -6,9 +6,9 @@
     - [What to evaluate](#what-to-evaluate)
     - [Introduction](#introduction)
 - [Report](#report)
-- [Installation requirements](#installation-requirements)
-- [](#)
-- [](#)
+    - [Installation requirements](#installation-requirements)
+    - [Initial test setup](#initial-test-setup)
+        - [Python](#python)
 - [](#)
 - [](#)
 
@@ -65,9 +65,12 @@ request. This must be done regularly, ie as soon as something new has been imple
 
 ## Installation requirements
 
+I start by creating a Git Repo for the assignment and then create a Python projekt with PyCharm
+
 ```shell
 pip install flake8
 pip install pytest
+pip install pytest-cov
 ```
 
 [Change default test runner in PyCharm to pytest](https://www.jetbrains.com/help/pycharm/pytest.html#enable-pytest)
@@ -76,3 +79,118 @@ pip install pytest
 
 ![](img/1.png)
 
+## Initial test setup
+
+### Python
+
+I create a `main.py` and `test_main.py` to verify that my test setup is working.
+
+`main.py` contain:
+
+```python
+def addition(x, y):
+    return x + y
+
+```
+
+`test_main.py` contain:
+
+```python
+import main
+
+
+def test_addition():
+    assert main.addition(2, 2) == 4
+    assert main.addition(2, 2) != 3
+
+```
+
+Coverage test:
+
+```shell
+pytest --cov=app
+```
+
+### CircleCI setup
+
+Create a `requirements.txt`
+
+```shell
+pip3 freeze > requirements.txt # generate from venv
+cat requirements.txt
+```
+
+**output:**
+
+```text
+attrs==20.3.0
+flake8==3.9.1
+iniconfig==1.1.1
+mccabe==0.6.1
+packaging==20.9
+pluggy==0.13.1
+py==1.10.0
+pycodestyle==2.7.0
+pyflakes==2.3.1
+pyparsing==2.4.7
+pytest==6.2.3
+pytest-cov==2.11.1
+toml==0.10.2
+```
+
+Cleanup of `requirements.txt`
+
+```text
+flake8==3.9.1
+py==1.10.0
+pytest==6.2.3
+pytest-cov==2.11.1
+```
+
+Create a `.circleci` folder
+
+```shell
+mkdir .circleci
+cd .circleci
+touch config.yml
+```
+
+Open config.yml and enter configuration
+
+```yaml
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.9
+
+    working_directory: ~/repo
+
+    steps:
+      # Step 1: obtain repo from GitHub
+      - checkout
+      # Step 2: create virtual env and install dependencies
+      - run:
+          name: install dependencies
+          command: |
+            pip install -r requirements.txt
+      # Step 3: run linter and tests
+      - run:
+          name: run tests
+          command: |
+            flake8 --exclude=env* --statistics
+            pytest -v
+```
+
+This is the basic setup I'm going to start building with. So I commit and push to my git repo from here
+
+## Report requirements:
+
+1. The report must contain the tools you worked with
+2. How you used them during the task
+3. If you encountered any obstacles and how you solved them.
+    - I use PyCharm, so I had to configure my IDE a little different.
+    - When I created the project it was initiated with a `__init__.py` that give som problems with my tests when its
+      empty. Initially I solved the problem by deleting the file.
+4. Describe how tests work and how you have used them in your task
+5. Explain what is missing for to achieve CD
