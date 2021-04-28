@@ -184,6 +184,26 @@ jobs:
 
 This is the basic setup I'm going to start building with. So I commit and push to my git repo from here
 
+## CircleCI Web setup
+
+Log in to CircleCI and setup project:
+
+![](img/2.png)
+
+Start building:
+
+![](img/3.png)
+
+Success on first run:
+
+![](img/4.png)
+
+Test log:
+
+![](img/5.png)
+
+
+
 ## Report requirements:
 
 1. The report must contain the tools you worked with
