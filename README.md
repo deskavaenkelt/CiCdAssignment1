@@ -9,7 +9,14 @@
     - [Installation requirements](#installation-requirements)
     - [Initial test setup](#initial-test-setup)
         - [Python](#python)
-- [](#)
+        - [CircleCI setup](#circleci-setup)
+    - [CircleCI Web setup](#circleci-web-setup)
+    - [Dev branch](#dev-branch)
+    - [Github pull request](#github-pull-request)
+    - [Report requirements](#report-requirements)
+    - [](#)
+    - [](#)
+    - [](#)
 - [](#)
 
 # Assignment 1
@@ -202,15 +209,66 @@ Test log:
 
 ![](img/5.png)
 
+## Dev branch
+
+Split the single test into two tests in dev branch.
+
+From:
+
+```python
+import main
+
+
+def test_addition():
+    assert main.addition(2, 2) == 4
+    assert main.addition(2, 2) != 3
+```
+
+To:
+
+```python
+import main
+
+
+def test_addition1():
+    assert main.addition(2, 2) == 4
+
+
+def test_addition2():
+    assert main.addition(2, 2) != 3
+```
+
+Commit and push:
+
+![](img/6.png)
+
+## Github pull request
+
+Now we will merge `dev` into `main` if the tests are `OK`: 
+
+![](img/7.png)
+
+Create pull request:
+
+![](img/8.png)
+
+Merge pull request:
+
+![](img/9.png)
+
+Successful merge:
+
+![](img/10.png)
+
 
 
 ## Report requirements:
 
-1. The report must contain the tools you worked with
-2. How you used them during the task
-3. If you encountered any obstacles and how you solved them.
+1. The report must contain the tools you worked with [x]
+2. How you used them during the task [x]
+3. If you encountered any obstacles and how you solved them. [x]
     - I use PyCharm, so I had to configure my IDE a little different.
     - When I created the project it was initiated with a `__init__.py` that give som problems with my tests when its
       empty. Initially I solved the problem by deleting the file.
-4. Describe how tests work and how you have used them in your task
-5. Explain what is missing for to achieve CD
+4. Describe how tests work and how you have used them in your assignment
+5. Explain what is missing to achieve CD (Continuous Delivery)
