@@ -271,26 +271,31 @@ Successful merge:
 
 **Functions (basic)**
 
-- [ ] Addition
-- [ ] Subtractions
-- [ ] Multiplikation
-- [ ] Division
-- [ ] With tests
-
-**Flask (advanced)**
-
-- [ ] Template for `index.html`
-- [ ] 
-- [ ] 
-- [ ] 
+- [x] Addition
+- [x] Subtractions
+- [x] Multiplikation
+- [x] Division
+- [x] With tests
 
 ## Report requirements:
 
-1. The report must contain the tools you worked with [x]
-2. How you used them during the task [x]
-3. If you encountered any obstacles and how you solved them. [x]
+1. [x] The report must contain the tools you worked with
+
+2. [x] How you used them during the task
+
+3. [x] If you encountered any obstacles and how you solved them.
+
     - I use PyCharm, so I had to configure my IDE a little different.
     - When I created the project it was initiated with a `__init__.py` that give som problems with my tests when its
       empty. Initially I solved the problem by deleting the file.
-4. Describe how tests work and how you have used them in your assignment
-5. Explain what is missing to achieve CD (Continuous Delivery)
+
+4. [x] Describe how tests work and how you have used them in your assignment
+
+    - I have done unit test for respective function of the Calculator.
+    - Added a test to check for division by zero.
+    - The tests verify that the code works as expected.
+
+5. [x] Explain what is missing to achieve CD (Continuous Delivery)
+    
+    - That would probably be to, have an automatic merge and pull request that merge a nev branch int `dev` or `main` 
+    
